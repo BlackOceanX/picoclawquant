@@ -340,7 +340,7 @@ PicoClawQuant định tuyến provider theo họ giao thức:
 **3. Chạy**
 
 ```bash
-picoclaw agent -m "Hello"
+picoclawquant agent -m "Hello"
 ```
 
 </details>

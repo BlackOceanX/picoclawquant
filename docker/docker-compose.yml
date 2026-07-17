@@ -53,7 +53,7 @@ services:
     profiles:
       - launcher
     environment:
-      - PICOCLAW_GATEWAY_HOST=0.0.0.0
+      - PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0
       # Set a fixed dashboard token instead of a random one each restart.
       # If not set, a random token is generated and printed to the console on startup.
       #- PICOCLAW_LAUNCHER_TOKEN=your-secret-token-here

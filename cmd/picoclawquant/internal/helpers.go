@@ -12,7 +12,7 @@ import (
 const Logo = pkg.Logo
 
 // GetPicoclawHome returns the picoclaw home directory.
-// Priority: $PICOCLAW_HOME > ~/.picoclaw
+// Priority: $PICOCLAWQUANT_HOME > ~/.picoclaw
 func GetPicoclawHome() string {
 	return config.GetHome()
 }

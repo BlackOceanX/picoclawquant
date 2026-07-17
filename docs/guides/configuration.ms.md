@@ -12,23 +12,23 @@ Anda boleh menggantikan laluan lalai menggunakan pemboleh ubah persekitaran. Ini
 
 | Pemboleh Ubah     | Penerangan                                                                                                                                          | Laluan Lalai              |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| `PICOCLAW_CONFIG` | Menindih laluan ke fail konfigurasi. Ini memberitahu picoclaw secara terus fail `config.json` yang perlu dimuatkan, dengan mengabaikan lokasi lain. | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | Menindih direktori root untuk data picoclaw. Ini mengubah lokasi lalai bagi `workspace` dan direktori data lain.                                    | `~/.picoclaw`             |
+| `PICOCLAWQUANT_CONFIG` | Menindih laluan ke fail konfigurasi. Ini memberitahu picoclaw secara terus fail `config.json` yang perlu dimuatkan, dengan mengabaikan lokasi lain. | `~/.picoclaw/config.json` |
+| `PICOCLAWQUANT_HOME`   | Menindih direktori root untuk data picoclaw. Ini mengubah lokasi lalai bagi `workspace` dan direktori data lain.                                    | `~/.picoclaw`             |
 
 **Contoh:**
 
 ```bash
 # Jalankan picoclaw menggunakan fail config tertentu
 # Laluan workspace akan dibaca daripada fail config tersebut
-PICOCLAW_CONFIG=/etc/picoclaw/production.json picoclaw gateway
+PICOCLAWQUANT_CONFIG=/etc/picoclaw/production.json picoclaw gateway
 
 # Jalankan picoclaw dengan semua data disimpan di /opt/picoclaw
 # Config akan dimuatkan dari lalai ~/.picoclaw/config.json
 # Workspace akan dicipta di /opt/picoclaw/workspace
-PICOCLAW_HOME=/opt/picoclaw picoclaw agent
+PICOCLAWQUANT_HOME=/opt/picoclaw picoclawquant agent
 
 # Gunakan kedua-duanya untuk setup yang disesuaikan sepenuhnya
-PICOCLAW_HOME=/srv/picoclaw PICOCLAW_CONFIG=/srv/picoclaw/main.json picoclaw gateway
+PICOCLAWQUANT_HOME=/srv/picoclaw PICOCLAWQUANT_CONFIG=/srv/picoclaw/main.json picoclaw gateway
 ```
 
 ### Konfigurasi Streaming
@@ -109,7 +109,7 @@ Secara lalai, skill dimuatkan daripada:
 Untuk setup lanjutan/ujian, anda boleh menindih root builtin skills dengan:
 
 ```bash
-export PICOCLAW_BUILTIN_SKILLS=/path/to/skills
+export PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/skills
 ```
 
 ### Menggunakan Skill dan Arahan Dari Saluran Chat

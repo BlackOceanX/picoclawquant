@@ -24,7 +24,7 @@ docker compose -f docker/docker-compose.yml --profile gateway up -d
 ```
 
 > [!TIP]
-> **Docker ユーザー**: デフォルトでは Gateway は `127.0.0.1` でリッスンしており、コンテナ外からはアクセスできません。ヘルスチェックエンドポイントへのアクセスやポート公開が必要な場合は、環境変数で `PICOCLAW_GATEWAY_HOST=0.0.0.0` を設定するか、`config.json` を更新してください。
+> **Docker ユーザー**: デフォルトでは Gateway は `127.0.0.1` でリッスンしており、コンテナ外からはアクセスできません。ヘルスチェックエンドポイントへのアクセスやポート公開が必要な場合は、環境変数で `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` を設定するか、`config.json` を更新してください。
 
 ```bash
 # 5. ログを確認
@@ -74,7 +74,7 @@ docker compose -f docker/docker-compose.yml --profile gateway up -d
 **1. 初期化**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 **2. 設定** (`~/.picoclaw/config.json`)
@@ -161,7 +161,7 @@ picoclaw onboard
 **4. チャット**
 
 ```bash
-picoclaw agent -m "2+2は？"
+picoclawquant agent -m "2+2は？"
 ```
 
 以上です！2 分で動作する AI アシスタントが手に入ります。

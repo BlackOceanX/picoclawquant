@@ -24,7 +24,7 @@ docker compose -f docker/docker-compose.yml --profile gateway up -d
 ```
 
 > [!TIP]
-> **Người dùng Docker**: Mặc định, Gateway lắng nghe trên `127.0.0.1`, không thể truy cập từ host. Nếu bạn cần truy cập các health endpoint hoặc mở port, hãy đặt `PICOCLAW_GATEWAY_HOST=0.0.0.0` trong môi trường hoặc cập nhật `config.json`.
+> **Người dùng Docker**: Mặc định, Gateway lắng nghe trên `127.0.0.1`, không thể truy cập từ host. Nếu bạn cần truy cập các health endpoint hoặc mở port, hãy đặt `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` trong môi trường hoặc cập nhật `config.json`.
 
 ```bash
 # 5. Kiểm tra log
@@ -72,7 +72,7 @@ docker compose -f docker/docker-compose.yml --profile gateway up -d
 **1. Khởi tạo**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 **2. Cấu hình** (`~/.picoclaw/config.json`)
@@ -159,7 +159,7 @@ picoclaw onboard
 **4. Chat**
 
 ```bash
-picoclaw agent -m "What is 2+2?"
+picoclawquant agent -m "What is 2+2?"
 ```
 
 Vậy là xong! Bạn có một trợ lý AI hoạt động trong 2 phút.

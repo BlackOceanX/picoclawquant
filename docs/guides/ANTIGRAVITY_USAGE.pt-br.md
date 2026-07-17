@@ -42,7 +42,7 @@ Você pode alterar o modelo padrão em `~/.picoclaw/config.json` ou substituí-l
 
 ```bash
 # Substituir para um único comando
-picoclaw agent -m "Hello" --model claude-opus-4-6-thinking
+picoclawquant agent -m "Hello" --model claude-opus-4-6-thinking
 ```
 
 ## 3. Uso em produção (Coolify/Docker)

@@ -33,7 +33,7 @@ chmod +x ./picoclaw
 Start first-run setup through `termux-chroot`, which gives the Linux binary a more standard filesystem layout than a raw Android userspace:
 
 ```bash
-termux-chroot ./picoclaw onboard
+termux-chroot ./picoclawquant onboard
 ```
 
 ## Configure
@@ -53,7 +53,7 @@ See [Configuration Guide](configuration.md) and [Providers & Model Configuration
 Use one-shot agent mode to confirm the installation:
 
 ```bash
-termux-chroot ./picoclaw agent -m "Hello from Termux"
+termux-chroot ./picoclawquant agent -m "Hello from Termux"
 ```
 
 For long-running use, start the gateway:

@@ -12,23 +12,23 @@ Bạn có thể ghi đè các đường dẫn mặc định bằng biến môi t
 
 | Biến              | Mô tả                                                                                                                             | Đường Dẫn Mặc Định       |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| `PICOCLAW_CONFIG` | Ghi đè đường dẫn đến file cấu hình. Chỉ định trực tiếp cho picoclaw file `config.json` nào cần tải, bỏ qua tất cả vị trí khác. | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | Ghi đè thư mục gốc cho dữ liệu picoclaw. Thay đổi vị trí mặc định của `workspace` và các thư mục dữ liệu khác.          | `~/.picoclaw`             |
+| `PICOCLAWQUANT_CONFIG` | Ghi đè đường dẫn đến file cấu hình. Chỉ định trực tiếp cho picoclaw file `config.json` nào cần tải, bỏ qua tất cả vị trí khác. | `~/.picoclaw/config.json` |
+| `PICOCLAWQUANT_HOME`   | Ghi đè thư mục gốc cho dữ liệu picoclaw. Thay đổi vị trí mặc định của `workspace` và các thư mục dữ liệu khác.          | `~/.picoclaw`             |
 
 **Ví dụ:**
 
 ```bash
 # Chạy picoclaw với file cấu hình cụ thể
 # Đường dẫn workspace sẽ được đọc từ trong file cấu hình đó
-PICOCLAW_CONFIG=/etc/picoclaw/production.json picoclaw gateway
+PICOCLAWQUANT_CONFIG=/etc/picoclaw/production.json picoclaw gateway
 
 # Chạy picoclaw với tất cả dữ liệu lưu tại /opt/picoclaw
 # Cấu hình sẽ được tải từ mặc định ~/.picoclaw/config.json
 # Workspace sẽ được tạo tại /opt/picoclaw/workspace
-PICOCLAW_HOME=/opt/picoclaw picoclaw agent
+PICOCLAWQUANT_HOME=/opt/picoclaw picoclawquant agent
 
 # Sử dụng cả hai cho thiết lập tùy chỉnh hoàn toàn
-PICOCLAW_HOME=/srv/picoclaw PICOCLAW_CONFIG=/srv/picoclaw/main.json picoclaw gateway
+PICOCLAWQUANT_HOME=/srv/picoclaw PICOCLAWQUANT_CONFIG=/srv/picoclaw/main.json picoclaw gateway
 ```
 
 ### Mức Log của Gateway
@@ -122,7 +122,7 @@ Mặc định, skill được tải từ:
 Cho thiết lập nâng cao/test, bạn có thể ghi đè thư mục gốc skill builtin với:
 
 ```bash
-export PICOCLAW_BUILTIN_SKILLS=/path/to/skills
+export PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/skills
 ```
 
 ### Dung Skill va Lenh Tu Kenh Chat

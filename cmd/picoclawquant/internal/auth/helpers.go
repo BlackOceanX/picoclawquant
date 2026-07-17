@@ -156,7 +156,7 @@ func authLoginGoogleAntigravity(noBrowser bool) error {
 
 	fmt.Println("\n✓ Google Antigravity login successful!")
 	fmt.Println("Default model set to: gemini-flash")
-	fmt.Println("Try it: picoclaw agent -m \"Hello world\"")
+	fmt.Println("Try it: picoclawquant agent -m \"Hello world\"")
 
 	return nil
 }

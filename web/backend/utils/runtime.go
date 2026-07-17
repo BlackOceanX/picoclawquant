@@ -14,7 +14,7 @@ import (
 )
 
 // GetPicoclawHome returns the picoclaw home directory.
-// Priority: $PICOCLAW_HOME > ~/.picoclaw
+// Priority: $PICOCLAWQUANT_HOME > ~/.picoclaw
 func GetPicoclawHome() string {
 	return config.GetHome()
 }
@@ -29,7 +29,7 @@ func GetDefaultConfigPath() string {
 
 // FindPicoclawBinary locates the picoclaw executable.
 // Search order:
-//  1. PICOCLAW_BINARY environment variable (explicit override)
+//  1. PICOCLAWQUANT_BINARY environment variable (explicit override)
 //  2. Same directory as the current executable
 //  3. Falls back to "picoclaw" and relies on $PATH
 func FindPicoclawBinary() string {

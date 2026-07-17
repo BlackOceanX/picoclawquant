@@ -12,23 +12,23 @@
 
 | 変数              | 説明                                                                                                                             | デフォルトパス            |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| `PICOCLAW_CONFIG` | 設定ファイルのパスを上書きします。picoclaw がどの `config.json` を読み込むかを直接指定し、他のすべての場所を無視します。 | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | picoclaw データのルートディレクトリを上書きします。`workspace` やその他のデータディレクトリのデフォルト場所を変更します。          | `~/.picoclaw`             |
+| `PICOCLAWQUANT_CONFIG` | 設定ファイルのパスを上書きします。picoclaw がどの `config.json` を読み込むかを直接指定し、他のすべての場所を無視します。 | `~/.picoclaw/config.json` |
+| `PICOCLAWQUANT_HOME`   | picoclaw データのルートディレクトリを上書きします。`workspace` やその他のデータディレクトリのデフォルト場所を変更します。          | `~/.picoclaw`             |
 
 **例：**
 
 ```bash
 # 特定の設定ファイルで picoclaw を実行
 # ワークスペースパスはその設定ファイル内から読み込まれます
-PICOCLAW_CONFIG=/etc/picoclaw/production.json picoclaw gateway
+PICOCLAWQUANT_CONFIG=/etc/picoclaw/production.json picoclaw gateway
 
 # /opt/picoclaw にすべてのデータを保存して picoclaw を実行
 # 設定はデフォルトの ~/.picoclaw/config.json から読み込まれます
 # ワークスペースは /opt/picoclaw/workspace に作成されます
-PICOCLAW_HOME=/opt/picoclaw picoclaw agent
+PICOCLAWQUANT_HOME=/opt/picoclaw picoclawquant agent
 
 # 両方を使用して完全にカスタマイズ
-PICOCLAW_HOME=/srv/picoclaw PICOCLAW_CONFIG=/srv/picoclaw/main.json picoclaw gateway
+PICOCLAWQUANT_HOME=/srv/picoclaw PICOCLAWQUANT_CONFIG=/srv/picoclaw/main.json picoclaw gateway
 ```
 
 ### Gateway ログレベル
@@ -122,7 +122,7 @@ Web ツールだけを残すクリーンなコンテキスト例：
 高度な/テスト用セットアップでは、以下の環境変数でビルトインスキルのルートを上書きできます：
 
 ```bash
-export PICOCLAW_BUILTIN_SKILLS=/path/to/skills
+export PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/skills
 ```
 
 ### チャットチャネルからスキルとコマンドを使う

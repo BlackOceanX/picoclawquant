@@ -12,23 +12,23 @@
 
 | 变量              | 描述                                                                                                                             | 默认路径                  |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| `PICOCLAW_CONFIG` | 覆盖配置文件的路径。这直接告诉 picoclaw 加载哪个 `config.json`，忽略所有其他位置。 | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | 覆盖 picoclaw 数据根目录。这会更改 `workspace` 和其他数据目录的默认位置。          | `~/.picoclaw`             |
+| `PICOCLAWQUANT_CONFIG` | 覆盖配置文件的路径。这直接告诉 picoclaw 加载哪个 `config.json`，忽略所有其他位置。 | `~/.picoclaw/config.json` |
+| `PICOCLAWQUANT_HOME`   | 覆盖 picoclaw 数据根目录。这会更改 `workspace` 和其他数据目录的默认位置。          | `~/.picoclaw`             |
 
 **示例：**
 
 ```bash
 # 使用特定的配置文件运行 picoclaw
 # 工作区路径将从该配置文件中读取
-PICOCLAW_CONFIG=/etc/picoclaw/production.json picoclaw gateway
+PICOCLAWQUANT_CONFIG=/etc/picoclaw/production.json picoclaw gateway
 
 # 在 /opt/picoclaw 中存储所有数据运行 picoclaw
 # 配置将从默认的 ~/.picoclaw/config.json 加载
 # 工作区将在 /opt/picoclaw/workspace 创建
-PICOCLAW_HOME=/opt/picoclaw picoclaw agent
+PICOCLAWQUANT_HOME=/opt/picoclaw picoclawquant agent
 
 # 同时使用两者进行完全自定义设置
-PICOCLAW_HOME=/srv/picoclaw PICOCLAW_CONFIG=/srv/picoclaw/main.json picoclaw gateway
+PICOCLAWQUANT_HOME=/srv/picoclaw PICOCLAWQUANT_CONFIG=/srv/picoclaw/main.json picoclaw gateway
 ```
 
 ### Gateway 日志等级
@@ -145,7 +145,7 @@ PicoClawQuant 将数据存储在您配置的工作区中（默认：`~/.picoclaw
 
 用 **picoclaw-launcher** 打开浏览器控制台前需要先使用密码登录。首次启动时打开 `/launcher-setup` 创建 dashboard 登录密码；后续手动登录使用 `/launcher-login`。
 
-- **配置文件**：与 `config.json` 同一目录（若设置了 `PICOCLAW_CONFIG`，则与它所指的文件同目录）。启动器专用文件名为 `launcher-config.json`。
+- **配置文件**：与 `config.json` 同一目录（若设置了 `PICOCLAWQUANT_CONFIG`，则与它所指的文件同目录）。启动器专用文件名为 `launcher-config.json`。
 - **密码存储**：支持的平台会把 bcrypt 后的密码哈希存入 `launcher-auth.db`。如果当前平台不支持 SQLite 密码存储，则把 bcrypt 哈希存入 `launcher-config.json`。
 - **旧配置迁移**：旧版 `launcher_token` 会一次性迁移为密码登录，并从保存后的 launcher 配置中移除。
 - **本地自动登录**：launcher 启动后自动打开本地浏览器时，会使用仅允许 loopback 访问的一次性引导入口自动设置会话 Cookie。
@@ -165,7 +165,7 @@ PicoClawQuant 将数据存储在您配置的工作区中（默认：`~/.picoclaw
 在高级/测试场景下，可通过以下环境变量覆盖内置技能目录：
 
 ```bash
-export PICOCLAW_BUILTIN_SKILLS=/path/to/skills
+export PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/skills
 ```
 
 ### 在聊天频道中使用技能

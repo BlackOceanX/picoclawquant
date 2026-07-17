@@ -1304,7 +1304,7 @@ func resolveDataDir(configured, channelName string) string {
 	if name == "" {
 		name = config.ChannelDeltaChat
 	}
-	return filepath.Join(home, ".picoclaw", "deltachat", name)
+	return filepath.Join(home, ".picoclawquant", "deltachat", name)
 }
 
 func expandHome(path string) string {

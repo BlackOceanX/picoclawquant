@@ -42,7 +42,7 @@ Bạn có thể thay đổi mô hình mặc định trong `~/.picoclaw/config.js
 
 ```bash
 # Ghi đè cho một lệnh duy nhất
-picoclaw agent -m "Hello" --model claude-opus-4-6-thinking
+picoclawquant agent -m "Hello" --model claude-opus-4-6-thinking
 ```
 
 ## 3. Sử dụng thực tế (Coolify/Docker)

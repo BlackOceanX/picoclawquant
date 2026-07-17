@@ -715,7 +715,7 @@ picoclaw auth models
 picoclaw gateway
 
 # Executar um agente com um modelo específico
-picoclaw agent -m "Hello" --model your-model
+picoclawquant agent -m "Hello" --model your-model
 ```
 
 ### Variáveis de Ambiente para Testes

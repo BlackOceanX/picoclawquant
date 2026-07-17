@@ -271,7 +271,7 @@ docker compose -f docker/docker-compose.yml --profile launcher up -d
 # Buka http://localhost:18800
 ```
 
-> **Pengguna Docker / VM:** Gateway mendengarkan di `127.0.0.1` secara default. Atur `PICOCLAW_GATEWAY_HOST=0.0.0.0` atau gunakan flag `-public` agar dapat diakses dari host.
+> **Pengguna Docker / VM:** Gateway mendengarkan di `127.0.0.1` secara default. Atur `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` atau gunakan flag `-public` agar dapat diakses dari host.
 
 ```bash
 # Cek log
@@ -342,7 +342,7 @@ Unduh APK dari [picoclaw.io](https://picoclaw.io/download/) dan instal langsung.
 wget https://github.com/BlackOceanX/picoclawquant/releases/latest/download/picoclaw_Linux_arm64.tar.gz
 tar xzf picoclaw_Linux_arm64.tar.gz
 pkg install proot
-termux-chroot ./picoclaw onboard   # chroot menyediakan tata letak filesystem Linux standar
+termux-chroot ./picoclawquant onboard   # chroot menyediakan tata letak filesystem Linux standar
 ```
 
 Kemudian ikuti bagian Terminal Launcher di bawah untuk menyelesaikan konfigurasi.
@@ -354,7 +354,7 @@ Untuk lingkungan minimal di mana hanya binary inti `picoclaw` yang tersedia (tan
 **1. Inisialisasi**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 Ini membuat `~/.picoclaw/config.json` dan direktori workspace.
@@ -385,10 +385,10 @@ Ini membuat `~/.picoclaw/config.json` dan direktori workspace.
 
 ```bash
 # Pertanyaan satu kali
-picoclaw agent -m "What is 2+2?"
+picoclawquant agent -m "What is 2+2?"
 
 # Mode interaktif
-picoclaw agent
+picoclawquant agent
 
 # Mulai gateway untuk integrasi aplikasi chat
 picoclaw gateway
@@ -570,10 +570,10 @@ Hubungkan PicoClawQuant ke Jaringan Sosial Agent hanya dengan mengirim satu pesa
 
 | Perintah                   | Deskripsi                        |
 | -------------------------- | -------------------------------- |
-| `picoclaw onboard`         | Inisialisasi konfigurasi & workspace |
+| `picoclawquant onboard`         | Inisialisasi konfigurasi & workspace |
 | `picoclaw auth weixin` | Hubungkan akun WeChat via QR |
-| `picoclaw agent -m "..."` | Chat dengan agent                |
-| `picoclaw agent`           | Mode chat interaktif             |
+| `picoclawquant agent -m "..."` | Chat dengan agent                |
+| `picoclawquant agent`           | Mode chat interaktif             |
 | `picoclaw gateway`         | Mulai gateway                    |
 | `picoclaw status`          | Tampilkan status                 |
 | `picoclaw version`         | Tampilkan info versi             |

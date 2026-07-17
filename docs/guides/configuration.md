@@ -14,23 +14,23 @@ You can override default paths using environment variables. This is useful for p
 
 | Variable          | Description                                                                                                                             | Default Path              |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| `PICOCLAW_CONFIG` | Overrides the path to the configuration file. This directly tells picoclaw which `config.json` to load, ignoring all other locations. | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | Overrides the root directory for picoclaw data. This changes the default location of the `workspace` and other data directories.          | `~/.picoclaw`             |
+| `PICOCLAWQUANT_CONFIG` | Overrides the path to the configuration file. This directly tells picoclaw which `config.json` to load, ignoring all other locations. | `~/.picoclaw/config.json` |
+| `PICOCLAWQUANT_HOME`   | Overrides the root directory for picoclaw data. This changes the default location of the `workspace` and other data directories.          | `~/.picoclaw`             |
 
 **Examples:**
 
 ```bash
 # Run picoclaw using a specific config file
 # The workspace path will be read from within that config file
-PICOCLAW_CONFIG=/etc/picoclaw/production.json picoclaw gateway
+PICOCLAWQUANT_CONFIG=/etc/picoclaw/production.json picoclaw gateway
 
 # Run picoclaw with all its data stored in /opt/picoclaw
 # Config will be loaded from the default ~/.picoclaw/config.json
 # Workspace will be created at /opt/picoclaw/workspace
-PICOCLAW_HOME=/opt/picoclaw picoclaw agent
+PICOCLAWQUANT_HOME=/opt/picoclaw picoclawquant agent
 
 # Use both for a fully customized setup
-PICOCLAW_HOME=/srv/picoclaw PICOCLAW_CONFIG=/srv/picoclaw/main.json picoclaw gateway
+PICOCLAWQUANT_HOME=/srv/picoclaw PICOCLAWQUANT_CONFIG=/srv/picoclaw/main.json picoclaw gateway
 ```
 
 ### Gateway Log Level
@@ -147,7 +147,7 @@ Example clean web policy:
 
 **picoclaw-launcher** serves a browser UI that requires password sign-in first. On first run, open `/launcher-setup` to create the dashboard password. Later manual sign-ins use `/launcher-login`.
 
-- **Config file**: Same directory as `config.json` (or the file pointed to by `PICOCLAW_CONFIG`). The launcher-specific file is `launcher-config.json`.
+- **Config file**: Same directory as `config.json` (or the file pointed to by `PICOCLAWQUANT_CONFIG`). The launcher-specific file is `launcher-config.json`.
 - **Password storage**: On supported platforms, the password is stored as a bcrypt hash in `launcher-auth.db`. On platforms where the SQLite password store is unavailable, the bcrypt hash is stored in `launcher-config.json`.
 - **Legacy migration**: Older `launcher_token` values are migrated once into password login and removed from saved launcher config.
 - **Local auto-login**: When the launcher auto-opens a local browser after startup, it uses a one-shot loopback-only bootstrap endpoint to set the session cookie automatically.
@@ -167,7 +167,7 @@ By default, skills are loaded from:
 For advanced/test setups, you can override the builtin skills root with:
 
 ```bash
-export PICOCLAW_BUILTIN_SKILLS=/path/to/skills
+export PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/skills
 ```
 
 ### Using Skills From Chat Channels

@@ -88,7 +88,7 @@ Platform note:
 
 The instance root follows `config.GetHome()`:
 
-- If `PICOCLAW_HOME` is set, use it.
+- If `PICOCLAWQUANT_HOME` is set, use it.
 - Otherwise use the default `.picoclaw` directory under the user home.
 
 If `config.GetHome()` falls back to `.` while isolation is enabled, startup should fail.

@@ -12,23 +12,23 @@ Puoi sovrascrivere i percorsi predefiniti usando variabili d'ambiente. Questo è
 
 | Variabile         | Descrizione                                                                                                                             | Percorso Predefinito      |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| `PICOCLAW_CONFIG` | Sovrascrive il percorso al file di configurazione. Indica direttamente a picoclaw quale `config.json` caricare, ignorando tutte le altre posizioni. | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | Sovrascrive la directory radice per i dati di picoclaw. Modifica la posizione predefinita del `workspace` e delle altre directory dati.  | `~/.picoclaw`             |
+| `PICOCLAWQUANT_CONFIG` | Sovrascrive il percorso al file di configurazione. Indica direttamente a picoclaw quale `config.json` caricare, ignorando tutte le altre posizioni. | `~/.picoclaw/config.json` |
+| `PICOCLAWQUANT_HOME`   | Sovrascrive la directory radice per i dati di picoclaw. Modifica la posizione predefinita del `workspace` e delle altre directory dati.  | `~/.picoclaw`             |
 
 **Esempi:**
 
 ```bash
 # Esegui picoclaw usando un file di configurazione specifico
 # Il percorso del workspace verrà letto da quel file di configurazione
-PICOCLAW_CONFIG=/etc/picoclaw/production.json picoclaw gateway
+PICOCLAWQUANT_CONFIG=/etc/picoclaw/production.json picoclaw gateway
 
 # Esegui picoclaw con tutti i dati salvati in /opt/picoclaw
 # La configurazione verrà caricata dal percorso predefinito ~/.picoclaw/config.json
 # Il workspace verrà creato in /opt/picoclaw/workspace
-PICOCLAW_HOME=/opt/picoclaw picoclaw agent
+PICOCLAWQUANT_HOME=/opt/picoclaw picoclawquant agent
 
 # Usa entrambi per un setup completamente personalizzato
-PICOCLAW_HOME=/srv/picoclaw PICOCLAW_CONFIG=/srv/picoclaw/main.json picoclaw gateway
+PICOCLAWQUANT_HOME=/srv/picoclaw PICOCLAWQUANT_CONFIG=/srv/picoclaw/main.json picoclaw gateway
 ```
 
 ### Configurazione Streaming
@@ -110,7 +110,7 @@ Per impostazione predefinita, le skill vengono caricate da:
 Per configurazioni avanzate/di test, puoi sovrascrivere la directory radice delle skill builtin con:
 
 ```bash
-export PICOCLAW_BUILTIN_SKILLS=/path/to/skills
+export PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/skills
 ```
 
 ### Politica Unificata di Esecuzione dei Comandi

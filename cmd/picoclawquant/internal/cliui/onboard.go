@@ -17,7 +17,7 @@ func PrintOnboardComplete(logo string, encrypt bool, configPath string) {
 }
 
 func printOnboardPlain(logo string, encrypt bool, configPath string) {
-	fmt.Printf("\n%s picoclaw is ready!\n", logo)
+	fmt.Printf("\n%s picoclawquant is ready!\n", logo)
 	fmt.Println("\nNext steps:")
 	if encrypt {
 		fmt.Println("  1. Set your encryption passphrase before starting picoclaw:")
@@ -36,9 +36,9 @@ func printOnboardPlain(logo string, encrypt bool, configPath string) {
 	fmt.Println("     See README.md for 17+ supported providers.")
 	fmt.Println("")
 	if encrypt {
-		fmt.Println("  3. Chat: picoclaw agent -m \"Hello!\"")
+		fmt.Println("  3. Chat: picoclawquant agent -m \"Hello!\"")
 	} else {
-		fmt.Println("  2. Chat: picoclaw agent -m \"Hello!\"")
+		fmt.Println("  2. Chat: picoclawquant agent -m \"Hello!\"")
 	}
 }
 
@@ -46,7 +46,7 @@ func printOnboardFancy(logo string, encrypt bool, configPath string) {
 	inner := InnerWidth()
 	box := borderStyle().MaxWidth(inner + 8)
 
-	ready := titleBarStyle().Render(logo+" picoclaw is ready!") + "\n"
+	ready := titleBarStyle().Render(logo+" picoclawquant is ready!") + "\n"
 	fmt.Println()
 	fmt.Println(box.Width(inner).Render(strings.TrimSpace(ready)))
 	fmt.Println()
@@ -104,7 +104,7 @@ func recommendedBlock() string {
 
 func chatStep(encrypt bool) string {
 	if encrypt {
-		return "3. Chat:\n   picoclaw agent -m \"Hello!\""
+		return "3. Chat:\n   picoclawquant agent -m \"Hello!\""
 	}
-	return "2. Chat:\n   picoclaw agent -m \"Hello!\""
+	return "2. Chat:\n   picoclawquant agent -m \"Hello!\""
 }

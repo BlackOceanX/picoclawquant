@@ -267,7 +267,7 @@ docker compose -f docker/docker-compose.yml --profile launcher up -d
 # Buka http://localhost:18800
 ```
 
-> **Pengguna Docker / VM:** Gateway mendengar pada `127.0.0.1` secara lalai. Tetapkan `PICOCLAW_GATEWAY_HOST=0.0.0.0` atau gunakan bendera `-public` untuk membolehkan akses dari hos.
+> **Pengguna Docker / VM:** Gateway mendengar pada `127.0.0.1` secara lalai. Tetapkan `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` atau gunakan bendera `-public` untuk membolehkan akses dari hos.
 
 ```bash
 # Semak log
@@ -339,7 +339,7 @@ Muat turun APK dari [picoclaw.io](https://picoclaw.io/download/) dan pasang seca
 wget https://github.com/BlackOceanX/picoclawquant/releases/latest/download/picoclaw_Linux_arm64.tar.gz
 tar xzf picoclaw_Linux_arm64.tar.gz
 pkg install proot
-termux-chroot ./picoclaw onboard   # chroot menyediakan susun atur sistem fail Linux standard
+termux-chroot ./picoclawquant onboard   # chroot menyediakan susun atur sistem fail Linux standard
 ```
 
 Kemudian ikuti bahagian Pelancar Terminal di bawah untuk melengkapkan konfigurasi.
@@ -351,7 +351,7 @@ Untuk persekitaran minimal di mana hanya binari teras `picoclaw` tersedia (tiada
 **1. Mulakan**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 Ini mencipta `~/.picoclaw/config.json` dan direktori ruang kerja.
@@ -379,10 +379,10 @@ Ini mencipta `~/.picoclaw/config.json` dan direktori ruang kerja.
 **3. Sembang**
 
 ```bash
-picoclaw agent -m "Apa itu 2+2?"
+picoclawquant agent -m "Apa itu 2+2?"
 
 # Mod interaktif
-picoclaw agent
+picoclawquant agent
 
 # Mulakan gateway untuk integrasi aplikasi sembang
 picoclaw gateway
@@ -569,10 +569,10 @@ Sambungkan PicoClawQuant ke Rangkaian Sosial Agent dengan menghantar satu mesej 
 
 | Arahan | Penerangan |
 | ------ | ---------- |
-| `picoclaw onboard` | Mulakan konfigurasi & ruang kerja |
+| `picoclawquant onboard` | Mulakan konfigurasi & ruang kerja |
 | `picoclaw auth weixin` | Sambungkan akaun WeChat melalui QR |
-| `picoclaw agent -m "..."` | Sembang dengan agent |
-| `picoclaw agent` | Mod sembang interaktif |
+| `picoclawquant agent -m "..."` | Sembang dengan agent |
+| `picoclawquant agent` | Mod sembang interaktif |
 | `picoclaw gateway` | Mulakan gateway |
 | `picoclaw status` | Tunjukkan status |
 | `picoclaw version` | Tunjukkan maklumat versi |

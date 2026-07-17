@@ -340,7 +340,7 @@ Cela maintient le runtime léger tout en faisant des nouveaux backends compatibl
 **3. Lancer**
 
 ```bash
-picoclaw agent -m "Hello"
+picoclawquant agent -m "Hello"
 ```
 
 </details>

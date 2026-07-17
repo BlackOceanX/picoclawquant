@@ -22,7 +22,7 @@ When this skill is active, stay fully subordinate to PicoClawQuant's real archit
 
 ```bash
 # Initialize ~/.picoclaw/config.json and ~/.picoclaw/workspace
-picoclaw onboard
+picoclawquant onboard
 
 # Authenticate a provider
 picoclaw auth login --provider openai
@@ -32,10 +32,10 @@ picoclaw model
 picoclaw model my-default-model
 
 # One-shot prompt
-picoclaw agent -m "Hello"
+picoclawquant agent -m "Hello"
 
 # Interactive CLI chat
-picoclaw agent
+picoclawquant agent
 
 # Start the gateway for chat channels
 picoclaw gateway
@@ -54,8 +54,8 @@ picoclaw mcp list
 ### Core CLI
 
 ```bash
-picoclaw onboard
-picoclaw agent [-m MESSAGE] [--session KEY] [--model MODEL] [--debug]
+picoclawquant onboard
+picoclawquant agent [-m MESSAGE] [--session KEY] [--model MODEL] [--debug]
 picoclaw gateway [--debug] [--no-truncate] [--allow-empty] [--host HOST]
 picoclaw status
 picoclaw version
@@ -608,15 +608,15 @@ Default workspace layout:
 ### Important Environment Variables
 
 ```bash
-PICOCLAW_CONFIG=/path/to/config.json
-PICOCLAW_HOME=/path/to/picoclaw-home
-PICOCLAW_BUILTIN_SKILLS=/path/to/custom-builtin-skills
+PICOCLAWQUANT_CONFIG=/path/to/config.json
+PICOCLAWQUANT_HOME=/path/to/picoclaw-home
+PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/custom-builtin-skills
 PICOCLAW_LOG_LEVEL=debug
-PICOCLAW_GATEWAY_HOST=0.0.0.0
+PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0
 ```
 
-Use `PICOCLAW_CONFIG` when the user reports "wrong config file" behavior.
-Use `PICOCLAW_HOME` when the user wants a portable or service-managed install.
+Use `PICOCLAWQUANT_CONFIG` when the user reports "wrong config file" behavior.
+Use `PICOCLAWQUANT_HOME` when the user wants a portable or service-managed install.
 
 ## PicoClawQuant-Native Concepts
 
@@ -732,17 +732,17 @@ For gateway and runtime debugging, PicoClawQuant writes logs under its home dire
 ~/.picoclaw/logs/gateway_panic.log
 ```
 
-If `PICOCLAW_HOME` is overridden, use:
+If `PICOCLAWQUANT_HOME` is overridden, use:
 
 ```text
-$PICOCLAW_HOME/logs/gateway.log
-$PICOCLAW_HOME/logs/gateway_panic.log
+$PICOCLAWQUANT_HOME/logs/gateway.log
+$PICOCLAWQUANT_HOME/logs/gateway_panic.log
 ```
 
 In practice, check these places first:
 
 - `~/.picoclaw/logs/` for persisted gateway logs
-- the terminal running `picoclaw gateway` or `picoclaw agent`
+- the terminal running `picoclaw gateway` or `picoclawquant agent`
 - Docker stdout/stderr via `docker compose -f docker/docker-compose.yml logs -f`
 - launcher or service logs if PicoClawQuant is being run under another supervisor
 
@@ -754,7 +754,7 @@ Useful controls:
 
 Special case:
 
-- the standalone `picoclaw agent` command uses console logging unless `PICOCLAW_LOG_FILE` is set explicitly
+- the standalone `picoclawquant agent` command uses console logging unless `PICOCLAW_LOG_FILE` is set explicitly
 - process hooks can write JSONL file logs when `PICOCLAW_HOOK_LOG_FILE` is set; this is hook-specific and separate from the main gateway log path
 
 ## Repository Map
@@ -853,8 +853,8 @@ Check:
 
 Check:
 
-- `PICOCLAW_CONFIG`
-- `PICOCLAW_HOME`
+- `PICOCLAWQUANT_CONFIG`
+- `PICOCLAWQUANT_HOME`
 - whether the user edited `config.json` or `.security.yml`
 - whether they are testing the CLI path, gateway path, or both
 

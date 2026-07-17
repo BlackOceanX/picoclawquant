@@ -68,7 +68,7 @@ The UI currently supports English and Simplified Chinese, plus light and dark th
 The launcher uses the same PicoClawQuant config file as the main binary.
 
 - Default app config path: `~/.picoclaw/config.json`
-- Override with environment variable: `PICOCLAW_CONFIG`
+- Override with environment variable: `PICOCLAWQUANT_CONFIG`
 - Override with a positional CLI argument: `picoclaw-launcher /path/to/config.json`
 
 Launcher-only settings are stored beside that app config:
@@ -92,16 +92,16 @@ If they are omitted, stored launcher settings are used.
 If the target config file does not exist, the launcher tries to bootstrap it automatically by running:
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 The launcher looks for the main PicoClawQuant binary in this order:
 
-1. `PICOCLAW_BINARY`
+1. `PICOCLAWQUANT_BINARY`
 2. A `picoclaw` binary in the same directory as the launcher
 3. `picoclaw` from `PATH`
 
-If onboarding or gateway startup cannot find the main binary, set `PICOCLAW_BINARY` explicitly.
+If onboarding or gateway startup cannot find the main binary, set `PICOCLAWQUANT_BINARY` explicitly.
 
 ### Gateway Management
 
@@ -188,7 +188,7 @@ make dev
 This does three things:
 
 1. Builds `../build/picoclaw` for launcher development.
-2. Starts the Go backend with `PICOCLAW_BINARY` pointing at that binary.
+2. Starts the Go backend with `PICOCLAWQUANT_BINARY` pointing at that binary.
 3. Starts the Vite frontend dev server.
 
 Use this when you want the full launcher flow during development.
@@ -353,7 +353,7 @@ Check these in the dashboard:
 Set the main binary explicitly:
 
 ```bash
-export PICOCLAW_BINARY=/absolute/path/to/picoclaw
+export PICOCLAWQUANT_BINARY=/absolute/path/to/picoclaw
 ```
 
 This affects onboarding and gateway subprocess startup.

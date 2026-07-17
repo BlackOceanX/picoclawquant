@@ -463,7 +463,7 @@ PicoClawQuant 按协议族路由 Provider：
 **3. 运行**
 
 ```bash
-picoclaw agent -m "你好"
+picoclawquant agent -m "你好"
 ```
 
 </details>

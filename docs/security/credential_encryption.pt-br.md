@@ -17,7 +17,7 @@ export PICOCLAW_KEY_PASSPHRASE="your-passphrase"
 
 **2. Criptografe uma chave de API**
 
-Execute `picoclaw onboard` — ele solicita sua frase secreta e gera a chave SSH,
+Execute `picoclawquant onboard` — ele solicita sua frase secreta e gera a chave SSH,
 depois recriptografa automaticamente quaisquer entradas `api_key` em texto simples na sua configuração
 na próxima chamada `SaveConfig`. O valor `enc://` resultante será semelhante a:
 
@@ -131,11 +131,11 @@ Se `PICOCLAW_SSH_KEY_PATH` não estiver definido, o PicoClawQuant procura a chav
 ```
 
 Este arquivo dedicado evita conflitos com as chaves SSH existentes do usuário.
-Execute `picoclaw onboard` para gerá-lo automaticamente.
+Execute `picoclawquant onboard` para gerá-lo automaticamente.
 
 `os.UserHomeDir()` é usado para resolução multiplataforma do diretório home (lê `USERPROFILE` no Windows, `HOME` no Unix/macOS).
 
-> **Nota:** Um arquivo de chave SSH é obrigatório para a criptografia de credenciais. Se nenhuma chave for encontrada e `PICOCLAW_SSH_KEY_PATH` não estiver definido, a criptografia/descriptografia falhará. Execute `picoclaw onboard` para gerar a chave automaticamente.
+> **Nota:** Um arquivo de chave SSH é obrigatório para a criptografia de credenciais. Se nenhuma chave for encontrada e `PICOCLAW_SSH_KEY_PATH` não estiver definido, a criptografia/descriptografia falhará. Execute `picoclawquant onboard` para gerar a chave automaticamente.
 
 ---
 
@@ -153,7 +153,7 @@ Nenhuma recriptografia é necessária.
 
 ## Considerações de Segurança
 
-- **Tanto a frase secreta quanto a chave SSH são obrigatórias.** A chave SSH atua como um segundo fator — sem ela, a criptografia/descriptografia falhará. Execute `picoclaw onboard` para gerar a chave se ela não existir.
+- **Tanto a frase secreta quanto a chave SSH são obrigatórias.** A chave SSH atua como um segundo fator — sem ela, a criptografia/descriptografia falhará. Execute `picoclawquant onboard` para gerar a chave se ela não existir.
 - **A chave SSH é somente leitura em tempo de execução.** O PicoClawQuant nunca escreve ou modifica o arquivo de chave SSH.
 - **Chaves em texto simples continuam sendo suportadas.** Configurações existentes sem `enc://` não são afetadas.
 - **O formato `enc://` é versionado** através do campo `info` do HKDF (`picoclaw-credential-v1`), permitindo futuras atualizações de algoritmo sem quebrar valores criptografados existentes.

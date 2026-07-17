@@ -274,7 +274,7 @@ docker compose -f docker/docker-compose.yml --profile launcher up -d
 # Ouvrez http://localhost:18800
 ```
 
-> **Utilisateurs Docker / VM :** Le Gateway écoute sur `127.0.0.1` par défaut. Définissez `PICOCLAW_GATEWAY_HOST=0.0.0.0` ou utilisez le flag `-public` pour le rendre accessible depuis l'hôte.
+> **Utilisateurs Docker / VM :** Le Gateway écoute sur `127.0.0.1` par défaut. Définissez `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` ou utilisez le flag `-public` pour le rendre accessible depuis l'hôte.
 
 ```bash
 # Vérifier les logs
@@ -346,7 +346,7 @@ Téléchargez l'APK depuis [picoclaw.io](https://picoclaw.io/download/) et insta
 wget https://github.com/BlackOceanX/picoclawquant/releases/latest/download/picoclaw_Linux_arm64.tar.gz
 tar xzf picoclaw_Linux_arm64.tar.gz
 pkg install proot
-termux-chroot ./picoclaw onboard   # chroot fournit une arborescence Linux standard
+termux-chroot ./picoclawquant onboard   # chroot fournit une arborescence Linux standard
 ```
 
 Suivez ensuite la section Terminal Launcher ci-dessous pour terminer la configuration.
@@ -358,7 +358,7 @@ Pour les environnements minimaux où seul le binaire principal `picoclaw` est di
 **1. Initialiser**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 Cela crée `~/.picoclaw/config.json` et le répertoire workspace.
@@ -389,10 +389,10 @@ Cela crée `~/.picoclaw/config.json` et le répertoire workspace.
 
 ```bash
 # Question ponctuelle
-picoclaw agent -m "What is 2+2?"
+picoclawquant agent -m "What is 2+2?"
 
 # Mode interactif
-picoclaw agent
+picoclawquant agent
 
 # Démarrer le gateway pour l'intégration d'applications de chat
 picoclaw gateway
@@ -575,10 +575,10 @@ Connectez PicoClawQuant au réseau social des Agents simplement en envoyant un s
 
 | Commande                  | Description                              |
 | ------------------------- | ---------------------------------------- |
-| `picoclaw onboard`        | Initialiser la config & le workspace     |
+| `picoclawquant onboard`        | Initialiser la config & le workspace     |
 | `picoclaw auth weixin` | Connecter un compte WeChat via QR |
-| `picoclaw agent -m "..."` | Chatter avec l'agent                     |
-| `picoclaw agent`          | Mode chat interactif                     |
+| `picoclawquant agent -m "..."` | Chatter avec l'agent                     |
+| `picoclawquant agent`          | Mode chat interactif                     |
 | `picoclaw gateway`        | Démarrer le gateway                      |
 | `picoclaw status`         | Afficher le statut                       |
 | `picoclaw version`        | Afficher les informations de version     |

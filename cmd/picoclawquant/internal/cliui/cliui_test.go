@@ -59,8 +59,8 @@ func TestStyleUsageTokensContainsTokens(t *testing.T) {
 		contains []string // substrings that must appear in plain output
 	}{
 		{
-			"picoclaw agent <message>",
-			[]string{"picoclaw agent", "<message>"},
+			"picoclawquant agent <message>",
+			[]string{"picoclawquant agent", "<message>"},
 		},
 		{
 			"picoclaw [command] [flags]",

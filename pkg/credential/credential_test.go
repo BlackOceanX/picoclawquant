@@ -264,7 +264,7 @@ func TestResolve_FileRef_withinConfigDir(t *testing.T) {
 }
 
 // TestEncrypt_SSHKeyOutsideAllowedDirs verifies that Encrypt rejects SSH key paths
-// that are not under PICOCLAW_SSH_KEY_PATH, PICOCLAW_HOME, or ~/.ssh/.
+// that are not under PICOCLAW_SSH_KEY_PATH, PICOCLAWQUANT_HOME, or ~/.ssh/.
 func TestEncrypt_SSHKeyOutsideAllowedDirs(t *testing.T) {
 	dir := t.TempDir()
 	sshKeyPath := filepath.Join(dir, "picoclaw_ed25519.key")
@@ -274,7 +274,7 @@ func TestEncrypt_SSHKeyOutsideAllowedDirs(t *testing.T) {
 
 	// Make sure none of the allowed env vars point here.
 	t.Setenv("PICOCLAW_SSH_KEY_PATH", "")
-	t.Setenv("PICOCLAW_HOME", "")
+	t.Setenv("PICOCLAWQUANT_HOME", "")
 
 	_, err := credential.Encrypt("passphrase", sshKeyPath, "sk-secret")
 	if err == nil {

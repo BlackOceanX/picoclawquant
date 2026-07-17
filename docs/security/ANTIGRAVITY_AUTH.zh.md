@@ -715,7 +715,7 @@ picoclaw auth models
 picoclaw gateway
 
 # 使用指定模型运行代理
-picoclaw agent -m "Hello" --model your-model
+picoclawquant agent -m "Hello" --model your-model
 ```
 
 ### 测试用环境变量

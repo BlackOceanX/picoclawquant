@@ -340,7 +340,7 @@ Isso mantém o runtime leve enquanto torna novos backends compatíveis com OpenA
 **3. Executar**
 
 ```bash
-picoclaw agent -m "Hello"
+picoclawquant agent -m "Hello"
 ```
 
 </details>

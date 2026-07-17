@@ -42,7 +42,7 @@ picoclaw auth models
 
 ```bash
 # 単一コマンドでオーバーライド
-picoclaw agent -m "Hello" --model claude-opus-4-6-thinking
+picoclawquant agent -m "Hello" --model claude-opus-4-6-thinking
 ```
 
 ## 3. 実際の使用方法（Coolify/Docker）

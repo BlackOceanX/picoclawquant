@@ -24,7 +24,7 @@ docker compose -f docker/docker-compose.yml --profile gateway up -d
 ```
 
 > [!TIP]
-> **Docker 用户**: 默认情况下, Gateway 监听 `127.0.0.1`，该端口不会暴露到容器外。如果需要通过端口映射访问健康检查接口，请在环境变量中设置 `PICOCLAW_GATEWAY_HOST=0.0.0.0` 或修改 `config.json`。
+> **Docker 用户**: 默认情况下, Gateway 监听 `127.0.0.1`，该端口不会暴露到容器外。如果需要通过端口映射访问健康检查接口，请在环境变量中设置 `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` 或修改 `config.json`。
 
 ```bash
 # 5. 查看日志
@@ -74,7 +74,7 @@ docker compose -f docker/docker-compose.yml --profile gateway up -d
 **1. 初始化 (Initialize)**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 **2. 配置 (Configure)** (`~/.picoclaw/config.json`)
@@ -164,7 +164,7 @@ picoclaw onboard
 **4. 对话 (Chat)**
 
 ```bash
-picoclaw agent -m "2+2 等于几？"
+picoclawquant agent -m "2+2 等于几？"
 ```
 
 就是这样！您在 2 分钟内就拥有了一个可工作的 AI 助手。

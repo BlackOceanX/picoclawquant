@@ -569,7 +569,7 @@ This keeps the runtime lightweight while making new OpenAI-compatible backends m
 **3. Run**
 
 ```bash
-picoclaw agent -m "Hello"
+picoclawquant agent -m "Hello"
 ```
 
 </details>

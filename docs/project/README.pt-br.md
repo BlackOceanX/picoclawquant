@@ -271,7 +271,7 @@ docker compose -f docker/docker-compose.yml --profile launcher up -d
 # Abra http://localhost:18800
 ```
 
-> **Usuários de Docker / VM:** O Gateway escuta em `127.0.0.1` por padrão. Defina `PICOCLAW_GATEWAY_HOST=0.0.0.0` ou use a flag `-public` para torná-lo acessível pelo host.
+> **Usuários de Docker / VM:** O Gateway escuta em `127.0.0.1` por padrão. Defina `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` ou use a flag `-public` para torná-lo acessível pelo host.
 
 ```bash
 # Verificar logs
@@ -343,7 +343,7 @@ Baixe o APK de [picoclaw.io](https://picoclaw.io/download/) e instale diretament
 wget https://github.com/BlackOceanX/picoclawquant/releases/latest/download/picoclaw_Linux_arm64.tar.gz
 tar xzf picoclaw_Linux_arm64.tar.gz
 pkg install proot
-termux-chroot ./picoclaw onboard   # chroot fornece um layout padrão de sistema de arquivos Linux
+termux-chroot ./picoclawquant onboard   # chroot fornece um layout padrão de sistema de arquivos Linux
 ```
 
 Em seguida, siga a seção Terminal Launcher abaixo para concluir a configuração.
@@ -355,7 +355,7 @@ Para ambientes mínimos onde apenas o binário principal `picoclaw` está dispon
 **1. Inicializar**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 Isso cria `~/.picoclaw/config.json` e o diretório workspace.
@@ -386,10 +386,10 @@ Isso cria `~/.picoclaw/config.json` e o diretório workspace.
 
 ```bash
 # Pergunta única
-picoclaw agent -m "What is 2+2?"
+picoclawquant agent -m "What is 2+2?"
 
 # Modo interativo
-picoclaw agent
+picoclawquant agent
 
 # Iniciar gateway para integração com app de chat
 picoclaw gateway
@@ -571,10 +571,10 @@ Conecte o PicoClawQuant à Rede Social de Agents simplesmente enviando uma únic
 
 | Comando                   | Descrição                              |
 | ------------------------- | -------------------------------------- |
-| `picoclaw onboard`        | Inicializar config e workspace         |
+| `picoclawquant onboard`        | Inicializar config e workspace         |
 | `picoclaw auth weixin` | Conectar conta WeChat via QR |
-| `picoclaw agent -m "..."` | Conversar com o agent                  |
-| `picoclaw agent`          | Modo de chat interativo                |
+| `picoclawquant agent -m "..."` | Conversar com o agent                  |
+| `picoclawquant agent`          | Modo de chat interativo                |
 | `picoclaw gateway`        | Iniciar o gateway                      |
 | `picoclaw status`         | Exibir status                          |
 | `picoclaw version`        | Exibir informações de versão           |

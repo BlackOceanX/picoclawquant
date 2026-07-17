@@ -17,7 +17,7 @@ export PICOCLAW_KEY_PASSPHRASE="your-passphrase"
 
 **2. Mã hóa khóa API**
 
-Chạy `picoclaw onboard` — nó yêu cầu nhập cụm mật khẩu và tạo khóa SSH,
+Chạy `picoclawquant onboard` — nó yêu cầu nhập cụm mật khẩu và tạo khóa SSH,
 sau đó tự động mã hóa lại tất cả các mục `api_key` dạng văn bản thuần trong cấu hình
 ở lần gọi `SaveConfig` tiếp theo. Giá trị `enc://` kết quả sẽ có dạng:
 
@@ -131,11 +131,11 @@ Nếu `PICOCLAW_SSH_KEY_PATH` không được đặt, PicoClawQuant tìm khóa c
 ```
 
 Tệp chuyên dụng này tránh xung đột với các khóa SSH hiện có của người dùng.
-Chạy `picoclaw onboard` để tạo tự động.
+Chạy `picoclawquant onboard` để tạo tự động.
 
 `os.UserHomeDir()` được sử dụng để phân giải thư mục home đa nền tảng (đọc `USERPROFILE` trên Windows, `HOME` trên Unix/macOS).
 
-> **Lưu ý:** Tệp khóa SSH là bắt buộc cho mã hóa thông tin xác thực. Nếu không tìm thấy khóa và `PICOCLAW_SSH_KEY_PATH` không được đặt, mã hóa/giải mã sẽ thất bại. Chạy `picoclaw onboard` để tạo khóa tự động.
+> **Lưu ý:** Tệp khóa SSH là bắt buộc cho mã hóa thông tin xác thực. Nếu không tìm thấy khóa và `PICOCLAW_SSH_KEY_PATH` không được đặt, mã hóa/giải mã sẽ thất bại. Chạy `picoclawquant onboard` để tạo khóa tự động.
 
 ---
 
@@ -153,7 +153,7 @@ Không cần mã hóa lại.
 
 ## Lưu ý về Bảo mật
 
-- **Cả cụm mật khẩu và khóa SSH đều bắt buộc.** Khóa SSH đóng vai trò yếu tố thứ hai — không có nó, mã hóa/giải mã sẽ thất bại. Chạy `picoclaw onboard` để tạo khóa nếu chưa tồn tại.
+- **Cả cụm mật khẩu và khóa SSH đều bắt buộc.** Khóa SSH đóng vai trò yếu tố thứ hai — không có nó, mã hóa/giải mã sẽ thất bại. Chạy `picoclawquant onboard` để tạo khóa nếu chưa tồn tại.
 - **Khóa SSH chỉ đọc khi chạy.** PicoClawQuant không bao giờ ghi hoặc sửa đổi tệp khóa SSH.
 - **Khóa văn bản thuần vẫn được hỗ trợ.** Các cấu hình hiện có không dùng `enc://` không bị ảnh hưởng.
 - **Định dạng `enc://` được quản lý phiên bản** thông qua trường `info` của HKDF (`picoclaw-credential-v1`), cho phép nâng cấp thuật toán trong tương lai mà không làm hỏng các giá trị đã mã hóa hiện có.

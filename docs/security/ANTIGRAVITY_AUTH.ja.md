@@ -715,7 +715,7 @@ picoclaw auth models
 picoclaw gateway
 
 # 特定のモデルでエージェントを実行
-picoclaw agent -m "Hello" --model your-model
+picoclawquant agent -m "Hello" --model your-model
 ```
 
 ### テスト用環境変数

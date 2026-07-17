@@ -14,7 +14,7 @@ This CLI acts as a **configuration manager**:
 
 The CLI updates the same config file used by the rest of PicoClawQuant:
 
-- `PICOCLAW_CONFIG` if set
+- `PICOCLAWQUANT_CONFIG` if set
 - otherwise `~/.picoclaw/config.json`
 
 When the CLI writes the file, it:

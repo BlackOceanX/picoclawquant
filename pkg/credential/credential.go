@@ -72,7 +72,7 @@ const SSHKeyPathEnvVar = "PICOCLAW_SSH_KEY_PATH"
 
 // picoclawHome is a package-local copy of config.EnvHome. It is kept here to
 // avoid a circular import between pkg/credential and pkg/config.
-const picoclawHome = "PICOCLAW_HOME"
+const picoclawHome = "PICOCLAWQUANT_HOME"
 
 const (
 	FileScheme = "file://"
@@ -247,7 +247,7 @@ func isWithinDir(path, dir string) bool {
 
 // allowedSSHKeyPath reports whether path is in a permitted location for SSH key files:
 //   - exact match with PICOCLAW_SSH_KEY_PATH env var
-//   - within the PICOCLAW_HOME env var directory
+//   - within the PICOCLAWQUANT_HOME env var directory
 //   - within ~/.ssh/
 func allowedSSHKeyPath(path string) bool {
 	if path == "" {
@@ -262,7 +262,7 @@ func allowedSSHKeyPath(path string) bool {
 		}
 	}
 
-	// Within PICOCLAW_HOME.
+	// Within PICOCLAWQUANT_HOME.
 	if picoHome := os.Getenv(picoclawHome); picoHome != "" {
 		if isWithinDir(clean, picoHome) {
 			return true
@@ -292,7 +292,7 @@ func deriveKey(passphrase, sshKeyPath string, salt []byte) ([]byte, error) {
 	}
 	if !allowedSSHKeyPath(sshKeyPath) {
 		return nil, fmt.Errorf(
-			"credential: SSH key path %q is not in an allowed location (PICOCLAW_SSH_KEY_PATH, PICOCLAW_HOME, or ~/.ssh/)",
+			"credential: SSH key path %q is not in an allowed location (PICOCLAW_SSH_KEY_PATH, PICOCLAWQUANT_HOME, or ~/.ssh/)",
 			sshKeyPath,
 		)
 	}

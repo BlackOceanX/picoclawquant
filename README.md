@@ -283,7 +283,7 @@ docker compose -f docker/docker-compose.yml --profile launcher up -d
 # Open http://localhost:18800
 ```
 
-> **Docker / VM users:** The Gateway listens on `127.0.0.1` by default. Set `PICOCLAW_GATEWAY_HOST=0.0.0.0` or use the `-public` flag to make it accessible from the host.
+> **Docker / VM users:** The Gateway listens on `127.0.0.1` by default. Set `PICOCLAWQUANT_GATEWAY_HOST=0.0.0.0` or use the `-public` flag to make it accessible from the host.
 
 ```bash
 # Check logs
@@ -357,7 +357,7 @@ For a full command-line setup checklist, see the [Android Termux Guide](docs/gui
 wget https://github.com/BlackOceanX/picoclawquant/releases/latest/download/picoclaw_Linux_arm64.tar.gz
 tar xzf picoclaw_Linux_arm64.tar.gz
 pkg install proot
-termux-chroot ./picoclaw onboard   # chroot provides a standard Linux filesystem layout
+termux-chroot ./picoclawquant onboard   # chroot provides a standard Linux filesystem layout
 ```
 
 Then follow the Terminal Launcher section below to complete configuration.
@@ -369,7 +369,7 @@ For minimal environments where only the `picoclaw` core binary is available (no 
 **1. Initialize**
 
 ```bash
-picoclaw onboard
+picoclawquant onboard
 ```
 
 This creates `~/.picoclaw/config.json` and the workspace directory.
@@ -402,10 +402,10 @@ This creates `~/.picoclaw/config.json` and the workspace directory.
 
 ```bash
 # One-shot question
-picoclaw agent -m "What is 2+2?"
+picoclawquant agent -m "What is 2+2?"
 
 # Interactive mode
-picoclaw agent
+picoclawquant agent
 
 # Start gateway for chat app integration
 picoclaw gateway
@@ -618,10 +618,10 @@ Connect PicoClawQuant to the Agent Social Network simply by sending a single mes
 
 | Command                   | Description                      |
 | ------------------------- | -------------------------------- |
-| `picoclaw onboard`        | Initialize config & workspace    |
+| `picoclawquant onboard`        | Initialize config & workspace    |
 | `picoclaw auth weixin` | Connect WeChat account via QR |
-| `picoclaw agent -m "..."` | Chat with the agent              |
-| `picoclaw agent`          | Interactive chat mode            |
+| `picoclawquant agent -m "..."` | Chat with the agent              |
+| `picoclawquant agent`          | Interactive chat mode            |
 | `picoclaw gateway`        | Start the gateway                |
 | `picoclaw status`         | Show status                      |
 | `picoclaw version`        | Show version info                |

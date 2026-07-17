@@ -1957,7 +1957,7 @@ func TestSessionConfig_ApplyDmScope_ClearsStaleDimensions(t *testing.T) {
 }
 
 func TestDefaultConfig_WorkspacePath_Default(t *testing.T) {
-	t.Setenv("PICOCLAW_HOME", "")
+	t.Setenv("PICOCLAWQUANT_HOME", "")
 
 	var fakeHome string
 	if runtime.GOOS == "windows" {
@@ -1969,7 +1969,7 @@ func TestDefaultConfig_WorkspacePath_Default(t *testing.T) {
 	}
 
 	cfg := DefaultConfig()
-	want := filepath.Join(fakeHome, ".picoclaw", "workspace")
+	want := filepath.Join(fakeHome, ".picoclawquant", "workspace")
 
 	if cfg.Agents.Defaults.Workspace != want {
 		t.Errorf("Default workspace path = %q, want %q", cfg.Agents.Defaults.Workspace, want)
@@ -1977,14 +1977,14 @@ func TestDefaultConfig_WorkspacePath_Default(t *testing.T) {
 }
 
 func TestDefaultConfig_WorkspacePath_WithPicoclawHome(t *testing.T) {
-	t.Setenv("PICOCLAW_HOME", "/custom/picoclaw/home")
+	t.Setenv("PICOCLAWQUANT_HOME", "/custom/picoclaw/home")
 
 	cfg := DefaultConfig()
 	want := filepath.Join("/custom/picoclaw/home", "workspace")
 
 	if cfg.Agents.Defaults.Workspace != want {
 		t.Errorf(
-			"Workspace path with PICOCLAW_HOME = %q, want %q",
+			"Workspace path with PICOCLAWQUANT_HOME = %q, want %q",
 			cfg.Agents.Defaults.Workspace,
 			want,
 		)

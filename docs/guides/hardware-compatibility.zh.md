@@ -134,10 +134,10 @@ wget https://github.com/BlackOceanX/picoclawquant/releases/latest/download/picoc
 tar xzf picoclaw_Linux_arm64.tar.gz
 
 # 2. 初始化
-./picoclaw onboard
+./picoclawquant onboard
 
 # 3. 测试
-./picoclaw agent -m "Hello, what board am I running on?"
+./picoclawquant agent -m "Hello, what board am I running on?"
 ```
 
 可用构建版本：`linux-amd64`, `linux-arm64`, `linux-arm`, `linux-riscv64`, `linux-loong64`, `linux-mipsle`

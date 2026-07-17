@@ -202,7 +202,7 @@ When you run PicoClawQuant with a V2 config file:
 Backups are created in the same directory as your config file:
 
 - **Default**: `~/.picoclaw/config.json.20260413.bak`
-- **Custom path**: If using `PICOCLAW_CONFIG`, backup is created next to that file
+- **Custom path**: If using `PICOCLAWQUANT_CONFIG`, backup is created next to that file
 - **Security file**: `.security.yml` is also backed up as `.security.yml.YYYYMMDD.bak`
 
 ### Downgrade Risk

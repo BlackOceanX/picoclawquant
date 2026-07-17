@@ -40,7 +40,7 @@ You can change the default model in `~/.picoclaw/config.json` or override it via
 
 ```bash
 # Override for a single command
-picoclaw agent -m "Hello" --model claude-opus-4-6-thinking
+picoclawquant agent -m "Hello" --model claude-opus-4-6-thinking
 ```
 
 ## 3. Real-world Usage (Coolify/Docker)

@@ -101,7 +101,7 @@ func resetGatewayTestState(t *testing.T) {
 	originalRestartGracePeriod := gatewayRestartGracePeriod
 	originalRestartForceKillWindow := gatewayRestartForceKillWindow
 	originalRestartPollInterval := gatewayRestartPollInterval
-	t.Setenv("PICOCLAW_HOME", t.TempDir())
+	t.Setenv("PICOCLAWQUANT_HOME", t.TempDir())
 	t.Cleanup(func() {
 		gatewayHealthGet = originalHealthGet
 		gatewayProcessMatcher = originalProcessMatcher
@@ -2184,7 +2184,7 @@ func TestGatewayRestartReturnsErrorStatusWhenReplacementFailsToStart(t *testing.
 	if err := os.WriteFile(invalidBinaryPath, []byte("#!/bin/sh\n"), 0o644); err != nil {
 		t.Fatalf("WriteFile() error = %v", err)
 	}
-	t.Setenv("PICOCLAW_BINARY", invalidBinaryPath)
+	t.Setenv("PICOCLAWQUANT_BINARY", invalidBinaryPath)
 
 	h := NewHandler(configPath)
 	mux := http.NewServeMux()
@@ -2365,7 +2365,7 @@ func TestFindPicoclawBinary_EnvOverride(t *testing.T) {
 		t.Fatalf("WriteFile() error = %v", err)
 	}
 
-	t.Setenv("PICOCLAW_BINARY", mockBinary)
+	t.Setenv("PICOCLAWQUANT_BINARY", mockBinary)
 
 	got := utils.FindPicoclawBinary()
 	if got != mockBinary {
@@ -2374,8 +2374,8 @@ func TestFindPicoclawBinary_EnvOverride(t *testing.T) {
 }
 
 func TestFindPicoclawBinary_EnvOverride_InvalidPath(t *testing.T) {
-	// When PICOCLAW_BINARY points to a non-existent path, fall through to next strategy
-	t.Setenv("PICOCLAW_BINARY", "/nonexistent/picoclaw-binary")
+	// When PICOCLAWQUANT_BINARY points to a non-existent path, fall through to next strategy
+	t.Setenv("PICOCLAWQUANT_BINARY", "/nonexistent/picoclaw-binary")
 
 	got := utils.FindPicoclawBinary()
 	// Should not return the invalid path; falls back to "picoclaw" or another found path

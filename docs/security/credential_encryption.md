@@ -15,7 +15,7 @@ export PICOCLAW_KEY_PASSPHRASE="your-passphrase"
 
 **2. Encrypt an API key**
 
-Run `picoclaw onboard` — it prompts for your passphrase and generates the SSH key,
+Run `picoclawquant onboard` — it prompts for your passphrase and generates the SSH key,
 then automatically re-encrypts any plaintext `api_key` entries in your config on
 the next `SaveConfig` call. The resulting `enc://` value will look like:
 
@@ -131,11 +131,11 @@ If `PICOCLAW_SSH_KEY_PATH` is not set, PicoClawQuant looks for the picoclaw-spec
 ```
 
 This dedicated file avoids conflicts with the user's existing SSH keys.
-Run `picoclaw onboard` to generate it automatically.
+Run `picoclawquant onboard` to generate it automatically.
 
 `os.UserHomeDir()` is used for cross-platform home directory resolution (reads `USERPROFILE` on Windows, `HOME` on Unix/macOS).
 
-> **Note:** An SSH key file is required for credential encryption. If no key is found and `PICOCLAW_SSH_KEY_PATH` is not set, encryption/decryption will fail. Run `picoclaw onboard` to generate the key automatically.
+> **Note:** An SSH key file is required for credential encryption. If no key is found and `PICOCLAW_SSH_KEY_PATH` is not set, encryption/decryption will fail. Run `picoclawquant onboard` to generate the key automatically.
 
 ---
 
@@ -153,7 +153,7 @@ No re-encryption is needed.
 
 ## Security Considerations
 
-- **Both passphrase and SSH key are required.** The SSH key acts as a second factor — without it, encryption/decryption will fail. Run `picoclaw onboard` to generate the key if it doesn't exist.
+- **Both passphrase and SSH key are required.** The SSH key acts as a second factor — without it, encryption/decryption will fail. Run `picoclawquant onboard` to generate the key if it doesn't exist.
 - **The SSH key is read-only at runtime.** PicoClawQuant never writes to or modifies the SSH key file.
 - **Plaintext keys remain supported.** Existing configs without `enc://` are unaffected.
 - **The `enc://` format is versioned** via the HKDF `info` field (`picoclaw-credential-v1`), allowing future algorithm upgrades without breaking existing encrypted values.

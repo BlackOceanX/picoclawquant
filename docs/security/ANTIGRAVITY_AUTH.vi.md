@@ -715,7 +715,7 @@ picoclaw auth models
 picoclaw gateway
 
 # Chạy agent với mô hình cụ thể
-picoclaw agent -m "Hello" --model your-model
+picoclawquant agent -m "Hello" --model your-model
 ```
 
 ### Biến môi trường cho kiểm thử

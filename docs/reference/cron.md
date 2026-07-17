@@ -165,10 +165,10 @@ By default, the workspace is:
 ~/.picoclaw/workspace
 ```
 
-If `PICOCLAW_HOME` is set, the default workspace becomes:
+If `PICOCLAWQUANT_HOME` is set, the default workspace becomes:
 
 ```text
-$PICOCLAW_HOME/workspace
+$PICOCLAWQUANT_HOME/workspace
 ```
 
 Both the gateway and `picoclaw cron` CLI subcommands use the same `cron/jobs.json` file.

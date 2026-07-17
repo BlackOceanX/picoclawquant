@@ -12,23 +12,23 @@ Vous pouvez remplacer les chemins par défaut à l'aide de variables d'environne
 
 | Variable          | Description                                                                                                                             | Chemin par défaut         |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| `PICOCLAW_CONFIG` | Remplace le chemin vers le fichier de configuration. Indique directement à PicoClawQuant quel `config.json` charger, en ignorant tous les autres emplacements. | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | Remplace le répertoire racine des données PicoClawQuant. Change l'emplacement par défaut du `workspace` et des autres répertoires de données. | `~/.picoclaw`             |
+| `PICOCLAWQUANT_CONFIG` | Remplace le chemin vers le fichier de configuration. Indique directement à PicoClawQuant quel `config.json` charger, en ignorant tous les autres emplacements. | `~/.picoclaw/config.json` |
+| `PICOCLAWQUANT_HOME`   | Remplace le répertoire racine des données PicoClawQuant. Change l'emplacement par défaut du `workspace` et des autres répertoires de données. | `~/.picoclaw`             |
 
 **Exemples :**
 
 ```bash
 # Run picoclaw using a specific config file
 # The workspace path will be read from within that config file
-PICOCLAW_CONFIG=/etc/picoclaw/production.json picoclaw gateway
+PICOCLAWQUANT_CONFIG=/etc/picoclaw/production.json picoclaw gateway
 
 # Run picoclaw with all its data stored in /opt/picoclaw
 # Config will be loaded from the default ~/.picoclaw/config.json
 # Workspace will be created at /opt/picoclaw/workspace
-PICOCLAW_HOME=/opt/picoclaw picoclaw agent
+PICOCLAWQUANT_HOME=/opt/picoclaw picoclawquant agent
 
 # Use both for a fully customized setup
-PICOCLAW_HOME=/srv/picoclaw PICOCLAW_CONFIG=/srv/picoclaw/main.json picoclaw gateway
+PICOCLAWQUANT_HOME=/srv/picoclaw PICOCLAWQUANT_CONFIG=/srv/picoclaw/main.json picoclaw gateway
 ```
 
 ### Niveau de Log du Gateway
@@ -121,7 +121,7 @@ Par défaut, les compétences sont chargées depuis :
 Pour les configurations avancées/de test, vous pouvez remplacer la racine des compétences builtin avec :
 
 ```bash
-export PICOCLAW_BUILTIN_SKILLS=/path/to/skills
+export PICOCLAWQUANT_BUILTIN_SKILLS=/path/to/skills
 ```
 
 ### Utiliser les Commandes Depuis les Canaux de Chat

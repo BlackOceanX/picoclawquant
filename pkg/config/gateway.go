@@ -12,7 +12,7 @@ import (
 const DefaultGatewayLogLevel = "warn"
 
 type GatewayConfig struct {
-	Host      string `json:"host"                env:"PICOCLAW_GATEWAY_HOST"`
+	Host      string `json:"host"                env:"PICOCLAWQUANT_GATEWAY_HOST"`
 	Port      int    `json:"port"                env:"PICOCLAW_GATEWAY_PORT"`
 	HotReload bool   `json:"hot_reload"          env:"PICOCLAW_GATEWAY_HOT_RELOAD"`
 	LogLevel  string `json:"log_level,omitempty" env:"PICOCLAW_LOG_LEVEL"`
